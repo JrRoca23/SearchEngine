@@ -85,20 +85,22 @@ class Indexer:
         """
         # Indexing
         ts = time()
-       # Iterar sobre los ficheros .json creados por el crawler
+       # Iterar sobre los archivos JSON en la carpeta de entrada
         for filename in os.listdir(self.args.input_folder):
             if filename.endswith(".json"):
                 with open(os.path.join(self.args.input_folder, filename), "r", encoding="utf-8") as file:
-                    data = json.load(file)
-                    # Crear y añadir un nuevo Document a la lista documents
-                    doc_id = len(self.index.documents) + 1
-                    title = data.get("title", "")
-                    url = data.get("url", "")
-                    text = self.parse(data["text"])
-                    document = Document(id=doc_id, title=title, url=url, text=text)
-                    self.index.documents.append(document)
-                    # Actualizar las posting lists
-                    self.update_postings(doc_id, text)
+                    # Cargar el JSON (ahora es una lista)
+                    data_list = json.load(file)
+
+                    # Iterar sobre la lista de datos
+                    for data in data_list:
+                        # Crear un nuevo Documento y agregarlo a la lista de documentos en el índice
+                        doc_id = len(self.index.documents) + 1
+                        document = Document(id=doc_id, title=data.get("title", ""), url=data["url"], text=data["text"])
+                        self.index.documents.append(document)
+
+                        # Actualizar las posting lists
+                        self.update_postings(doc_id, data["text"])
         te = time()
 
         # Save index

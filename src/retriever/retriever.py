@@ -15,7 +15,7 @@ class Result:
     snippet: str
 
     def __str__(self) -> str:
-        print(f"{self.url} -> {self.snippet}")
+        return f"{self.url} -> {self.snippet}"
 
 
 class Retriever:
@@ -45,7 +45,29 @@ class Retriever:
         Returns:
             List[Result]: lista de resultados que cumplen la consulta
         """
-        ...
+        query_terms = query.split()
+        result_stack = []
+
+        for term in query_terms:
+            if term == "AND" or term == "OR" or term == "NOT":
+                # Si es un operador, aplicar la operación a los elementos en la pila
+                if term == "NOT":
+                    operand_a = result_stack.pop()
+                    result_stack.append(self._not_(operand_a))
+                else:
+                    operand_b = result_stack.pop()
+                    operand_a = result_stack.pop()
+                    if term == "AND":
+                        result_stack.append(self._and_(operand_a, operand_b))
+                    else:
+                        result_stack.append(self._or_(operand_a, operand_b))
+            else:
+                # Es un término, agregar a la pila
+                result_stack.append(self.index.postings.get(term, []))
+
+        # Al final, result_stack debería contener el resultado final
+        final_result = result_stack.pop()
+        return final_result
 
     def search_from_file(self, fname: str) -> Dict[str, List[Result]]:
         """Método para hacer consultas desde fichero.
@@ -58,9 +80,11 @@ class Retriever:
         """
         with open(fname, "r") as fr:
             ts = time()
-            ...
+            # Leer cada línea del fichero como una consulta y almacenar los resultados
+            results_dict = {query.strip(): self.search_query(query.strip()) for query in fr}
             te = time()
-            print(f"Time to solve {n_queries}: {te-ts}")
+            print(f"Time to solve {len(results_dict)} queries: {te-ts}")
+            return results_dict
 
     def load_index(self) -> Index:
         """Método para cargar un índice invertido desde disco."""
@@ -68,39 +92,14 @@ class Retriever:
             return pkl.load(fr)
 
     def _and_(self, posting_a: List[int], posting_b: List[int]) -> List[int]:
-        """Método para calcular la intersección de dos posting lists.
-        Será necesario para resolver queries que incluyan "A AND B"
-        en `search_query`.
-
-        Args:
-            posting_a (List[int]): una posting list
-            posting_b (List[int]): otra posting list
-        Returns:
-            List[int]: posting list de la intersección
-        """
-        ...
+        """Método para calcular la intersección de dos posting lists."""
+        return list(set(posting_a) & set(posting_b))
 
     def _or_(self, posting_a: List[int], posting_b: List[int]) -> List[int]:
-        """Método para calcular la unión de dos posting lists.
-        Será necesario para resolver queries que incluyan "A OR B"
-        en `search_query`.
-
-        Args:
-            posting_a (List[int]): una posting list
-            posting_b (List[int]): otra posting list
-        Returns:
-            List[int]: posting list de la unión
-        """
-        ...
+        """Método para calcular la unión de dos posting lists."""
+        return list(set(posting_a) | set(posting_b))
 
     def _not_(self, posting_a: List[int]) -> List[int]:
-        """Método para calcular el complementario de una posting list.
-        Será necesario para resolver queries que incluyan "NOT A"
-        en `search_query`
-
-        Args:
-            posting_a (List[int]): una posting list
-        Returns:
-            List[int]: complementario de la posting list
-        """
-        ...
+        """Método para calcular el complementario de una posting list."""
+        all_docs = set(range(1, len(self.index.documents) + 1))
+        return list(all_docs - set(posting_a))
