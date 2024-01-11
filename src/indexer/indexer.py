@@ -39,10 +39,11 @@ class Index:
     postings: Dict[str, List[int]] = field(default_factory=lambda: {})
     documents: List[Document] = field(default_factory=lambda: [])
 
-    def save(self, output_name: str) -> None:
-        """Serializa el índice (`self`) en formato binario usando Pickle"""
-        with open(output_name, "wb") as fw:
+    def save(self, output_folder: str, output_name: str) -> None:
+        output_path = os.path.join(output_folder, output_name)
+        with open(output_path, "wb") as fw:
             pkl.dump(self, fw)
+
 
 @dataclass
 class Stats:
@@ -85,33 +86,44 @@ class Indexer:
         """
         # Indexing
         ts = time()
-       # Iterar sobre los archivos JSON en la carpeta de entrada
+       # Iterar sobre los archivos en la carpeta de entrada
         for filename in os.listdir(self.args.input_folder):
+            # Verificar si el archivo tiene extensión .json
             if filename.endswith(".json"):
+                # Abrir el archivo JSON y cargar los datos
                 with open(os.path.join(self.args.input_folder, filename), "r", encoding="utf-8") as file:
-                    # Cargar el JSON (ahora es una lista)
                     data_list = json.load(file)
-
-                    # Iterar sobre la lista de datos
+                    
+                    # Iterar sobre los datos en la lista
                     for data in data_list:
-                        # Crear un nuevo Documento y agregarlo a la lista de documentos en el índice
+                        # Generar un nuevo identificador de documento
                         doc_id = len(self.index.documents) + 1
+                        
+                        # Crear un nuevo objeto Document con los datos del archivo JSON
                         document = Document(id=doc_id, title=data.get("title", ""), url=data["url"], text=data["text"])
+                        
+                        # Agregar el documento a la lista de documentos en el índice
                         self.index.documents.append(document)
 
-                        # Actualizar las posting lists
-                        self.update_postings(doc_id, data["text"])
+                        # Limpiar y tokenizar el texto del documento
+                        cleaned_text = self.parse(document.text)
+                        tokens = self.tokenize(cleaned_text)
+
+                        # Actualizar las posting lists en el index
+                        self.update_postings(doc_id, tokens)
+
         te = time()
 
         # Save index
-        self.index.save(self.args.output_name)
+        output_folder = "etc/indexes"
+        self.index.save(output_folder, self.args.output_name)
 
         # Show stats
         self.show_stats(building_time=te - ts)
     
     def update_postings(self, doc_id: int, text: str) -> None:
         """Método para actualizar las posting lists."""
-        words = self.tokenize(text)
+        words = self.tokenize(" ".join(text))
         words = self.remove_stopwords(words)
         for word in set(words):
             if word not in self.index.postings:
