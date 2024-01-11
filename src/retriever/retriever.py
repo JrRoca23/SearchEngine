@@ -26,47 +26,41 @@ class Retriever:
         self.index = self.load_index()
 
     def search_query(self, query: str) -> List[Result]:
-        """Método para resolver una query.
-        Este método debe ser capaz, al menos, de resolver consultas como:
-        "grado AND NOT master OR docencia", con un procesado de izquierda
-        a derecha. Por simplicidad, podéis asumir que los operadores AND,
-        NOT y OR siempre estarán en mayúsculas.
-
-        Ejemplo para "grado AND NOT master OR docencia":
-
-        posting["grado"] = [1,2,3] (doc ids que tienen "grado")
-        NOT posting["master"] = [3, 4, 5] (doc ids que no tienen "master")
-        posting["docencia"] = [6] (doc ids que tienen docencia)
-
-        [1, 2, 3] AND [3, 4, 5] OR [6] = [3] OR [6] = [3, 6]
+        """Método para resolver una query utilizando el algoritmo Shunting Yard.
 
         Args:
             query (str): consulta a resolver
         Returns:
             List[Result]: lista de resultados que cumplen la consulta
         """
-        query_terms = query.split()
+        query_terms = self.shunting_yard(query)
         result_stack = []
 
         for term in query_terms:
             if term == "AND" or term == "OR" or term == "NOT":
                 # Si es un operador, aplicar la operación a los elementos en la pila
                 if term == "NOT":
-                    operand_a = result_stack.pop()
-                    result_stack.append(self._not_(operand_a))
+                    if result_stack:
+                        operand_a = result_stack.pop()
+                        result_stack.append(self._not_(operand_a))
                 else:
-                    operand_b = result_stack.pop()
-                    operand_a = result_stack.pop()
-                    if term == "AND":
-                        result_stack.append(self._and_(operand_a, operand_b))
-                    else:
-                        result_stack.append(self._or_(operand_a, operand_b))
+                    if len(result_stack) >= 2:
+                        operand_b = result_stack.pop()
+                        operand_a = result_stack.pop()
+                        if term == "AND":
+                            result_stack.append(self._and_(operand_a, operand_b))
+                        else:
+                            result_stack.append(self._or_(operand_a, operand_b))
             else:
                 # Es un término, agregar a la pila
                 result_stack.append(self.index.postings.get(term, []))
 
-        # Al final, result_stack debería contener el resultado final
-        final_result = result_stack.pop()
+            # Imprimir información de depuración
+            print(f"Term: {term}, Stack: {result_stack}")
+
+        # Al final, result_stack debería contener el resultado final o estar vacía
+        final_result = result_stack.pop() if result_stack else []
+        print(f"Final Result: {final_result}")
         return final_result
 
     def search_from_file(self, fname: str) -> Dict[str, List[Result]]:
@@ -99,7 +93,53 @@ class Retriever:
         """Método para calcular la unión de dos posting lists."""
         return list(set(posting_a) | set(posting_b))
 
-    def _not_(self, posting_a: List[int]) -> List[int]:
+    def _not_(self, operand_a: List[int]) -> List[int]:
         """Método para calcular el complementario de una posting list."""
         all_docs = set(range(1, len(self.index.documents) + 1))
-        return list(all_docs - set(posting_a))
+        complement_list = list(all_docs - set(operand_a))
+        
+        return complement_list
+
+    def shunting_yard(self, query: str) -> List[str]:
+        """Método que implementa el algoritmo Shunting Yard para convertir
+        una expresión en notación infija a notación polaca inversa (postfija).
+
+        Args:
+            query (str): consulta en notación infija
+        Returns:
+            List[str]: lista de términos en notación polaca inversa
+        """
+        output_queue = []
+        operator_stack = []
+
+        # Definir la precedencia de los operadores
+        precedence = {"NOT": 3, "AND": 2, "OR": 1}
+
+        # Tokenizar la consulta
+        tokens = query.split()
+
+        for token in tokens:
+            if token.isalnum():
+                # Si es un término, agregar a la salida
+                output_queue.append(token)
+            elif token in precedence:
+                # Si es un operador, desapilar operadores de mayor precedencia y agregarlos a la salida
+                while operator_stack and precedence.get(operator_stack[-1], 0) >= precedence.get(token, 0):
+                    output_queue.append(operator_stack.pop())
+                operator_stack.append(token)
+            elif token == "(":
+                # Si es un paréntesis de apertura, agregar a la pila de operadores
+                operator_stack.append(token)
+            elif token == ")":
+                # Si es un paréntesis de cierre, desapilar operadores hasta encontrar el paréntesis de apertura
+                while operator_stack and operator_stack[-1] != "(":
+                    output_queue.append(operator_stack.pop())
+                operator_stack.pop()  # Quitar el paréntesis de apertura
+
+        # Desapilar operadores restantes
+        while operator_stack:
+            output_queue.append(operator_stack.pop())
+
+        return output_queue
+    
+    
