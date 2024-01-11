@@ -123,6 +123,7 @@ class Indexer:
     
     def update_postings(self, doc_id: int, text: str) -> None:
         """Método para actualizar las posting lists."""
+        text = text.lower() #Convertir todo el texto a minúsculas
         words = self.tokenize(" ".join(text))
         words = self.remove_stopwords(words)
         for word in set(words):
