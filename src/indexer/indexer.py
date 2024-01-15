@@ -8,6 +8,7 @@ from dataclasses import dataclass, field
 from time import time
 from typing import Dict, List
 from nltk.corpus import stopwords
+from unidecode import unidecode
 
 @dataclass
 class Document:
@@ -123,15 +124,15 @@ class Indexer:
     
     def update_postings(self, doc_id: int, text: str) -> None:
         """Método para actualizar las posting lists."""
-        text = text.lower() #Convertir todo el texto a minúsculas
         words = self.tokenize(" ".join(text))
         words = self.remove_stopwords(words)
+        words = [unidecode(word) for word in words]  # Quitar tildes
         for word in set(words):
             if word not in self.index.postings:
                 self.index.postings[word] = [doc_id]
             else:
                 self.index.postings[word].append(doc_id)
-    
+
     def parse(self, text: str) -> str:
         """Método para extraer el texto de un documento.
         Puedes utilizar la librería 'beautifulsoup' para extraer solo
@@ -173,7 +174,7 @@ class Indexer:
         """
         # En este ejemplo, simplemente excluimos algunas palabras comunes en español
         stop_words = set(stopwords.words("english"))
-        return [word for word in words if word.lower() not in stop_words]
+        return [word for word in words if unidecode(word.lower()) not in stop_words]
 
     def remove_punctuation(self, text: str) -> str:
         """Método para eliminar signos de puntuación de un texto:
