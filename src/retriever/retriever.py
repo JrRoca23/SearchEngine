@@ -1,4 +1,5 @@
 import pickle as pkl
+import re
 from argparse import Namespace
 from dataclasses import dataclass
 from time import time
@@ -40,7 +41,10 @@ class Retriever:
         output = []
         operator_stack = []
 
-        for token in query.split():
+        # Usar una expresión regular para dividir la consulta teniendo en cuenta los paréntesis y "NOT"
+        tokens = re.findall(r'\(|\)|NOT|[^\s()]+', query)
+
+        for token in tokens:
             if token.isalnum():
                 output.append(token)
             elif token in {"AND", "OR", "NOT"}:
