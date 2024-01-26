@@ -1,0 +1,168 @@
+POSTGRADO DE
+EXPERTO
+UNIVERSITARIO EN
+BUSINESS
+INTELLIGENCE AND
+DECISION MAKINGÍndice
+1.¿Por qué UE Online?
+2.Aspectos Diferenciales
+3.Metodología Online
+4.Descripción del Curso
+5.¿Por qué estudiar el Postgrado Universitario en Business Intelligence & Decision
+Making?
+6.Plan de Estudios
+7.¿Cuál es el Formato del Curso?PROGRAMAS DE FORMACIÓN CONTINUA
+¿POR QUÉ UE ONLINE?
+Nuestros programas de estudios a distancia te ofrecen la posibilidad de elegir entre distintas áreas
+de conocimiento y desarrollar las capacidades profesionales que más se están deman-
+dando hoy en día.
+Nos centramos en el diseño de programas que permitan potenciar tu futuro e impulsar tu carrera
+profesional mediante una formación 100% online que se adapta a tus necesidades y compatibili-
+zándolo con tu vida personal.
+El enfoque práctico del contenido de cada programa hará que tu aprendizaje sea mucho más
+sencillo y marque la diferencia en el mercado laboral.ASPECTOS DIFERENCIALES
+MASTERCLASSES
+Charlas magistrales
+de temas de interés
+para los alumnos,
+relacionados con la MATERIAL
+DIDÁCTICO
+temática del curso.
+Compuesto por
+materiales descargables,
+vídeos explicativos,
+CLAUSTRO ejercicios prácticos y test
+EXPERTO de autoevaluación.
+Formado por profesores
+de la UE con una amplia
+experiencia en empresas
+de renombre:
+Mercadona, Banco ING,
+BBVA o Telefónica. PRESTIGIO
+Consigue una
+titulación con el sello
+de calidad que aporta
+ESPECIALÍZATE
+la Universidad
+Diseño y edición de
+Europea.
+imagen y vídeo
+publicitaria con el
+paquete Adobe.
+INSIGNIA DIGITAL
+Además de tu certificado
+de la Universidad
+Europea, obtendrás una
+insignia de
+reconocimiento digital HARVARD BUSINESS
+que acreditará tu PUBLISHING
+conocimiento. EDUCATION
+Tendrás incluido recursos
+de Harvard, sobre lo
+último en pensamiento
+empresarial de la mano
+de expertos a nivel
+mundial.METODOLOGÍA ONLINE
+La metodología online de la Universidad Europea se
+centra en el estudiante y en garantizar un aprendizaje
+eficaz para que logre sus objetivos.
+La tecnología y la innovación nos permiten ofrecer un
+entorno dinámico y motivador, con la flexibilidad que
+necesita y las herramientas que aseguran la calidad
+formativa.
+Contarás con un Campus Virtual sencillo e intuitivo, adap-
+table a los diferentes dispositivos (desktop, tablet y móvil)
+que te permitirá acceder a los materiales didácticos
+cuándo y dónde quieras.
+Sin exámenes Flexibilidad
+Al final de cada módulo Centrada en garantizar en
+tendrás que realizar un test todo momento un aprendi-
+de autoevaluación para zaje eficaz, flexible y adapta-
+poder obtener un certifica- do en forma y contenido a
+do emitido por la Universi- las necesidades del estu-
+dad Europea. diante.
+Tecnología e Innovación Contenido Interactivo
+Campus virtual basado en Recursos dinámicos para
+una plataforma ágil, que facilitar la comprensión del
+favorece el aprendizaje cola- contenido y motivar al estu-
+borativo y las herramientas diante a ampliar sus conoci-
+que aseguran la calidad mientos, a través de master-
+formativa. classes.
+Profesorado Networking
+Nuestro claustro de profeso- Tendrás acceso a la red
+res te enseñará mediante Alumni, profesores y empre-
+casos de estudio, ejemplos y sas. Se incrementa el valor
+situaciones reales que se de mercado de los perfiles
+aplican actualmente en el de los alumnos, creando
+mundo empresarial. profesionales altamente
+atractivos en el mercado
+laboral.DESCRIPCIÓN DEL CURSO
+En este curso de análisis de datos aumentarás tus conocimientos sobre business intelligence, así
+como la procedencia de los términos que actualmente se emplean en el día a día las empresas.
+Te formarás en el sector y en la funcionalidad del tratamiento de datos, la realización de
+operaciones e informes con ellos, la conexión de varias fuentes de datos, la creación de cuadros
+de mando, la interpretación de los resultados obtenidos y la predicción para una correcta toma de
+decisiones de negocio.
+Aprenderás a automatizar datos de manera profesional, dirigir proyectos de business intelligence
+y de trasformación digital.
+Este curso de Business Intelligence te proporcionará los conocimientos fundamentales necesarios
+para comprender y aplicar eficientemente los principios del análisis de datos. Explora teoría y
+fundamentos en el módulo inicial, seguido de prácticas con herramientas clave como Power BI,
+Tableau y CARTO. Aprende a extraer información valiosa de los datos, visualizarlos de manera
+impactante y tomar decisiones estratégicas basadas en análisis sólidos.
+Conseguirás la preparación necesaria para poder obtener la certificación más importante del
+mercado: Microsoft Power BI Data Analyst.
+*Este curso no convalida asignaturas de otros programas.
+¿POR QUÉ ESTUDIAR EL
+POSTGRADO UNIVERSITARIO
+EN BUSINESS INTELLIGENCE &
+DECISION MAKING?
+•Curso 100% online.
+• Formación completa que te permite optar a nuevas
+oportunidades laborales.
+•Masterclasses de profesionales del mundo empresarial.
+• Calidad Educativa de la Universidad Europea.PLAN DE ESTUDIOS
+1. Introducción al Business Intelligence
+·Business Intelligence y fuentes de datos
+·La visualización de datos
+·Herramientas de Visualización de Datos
+·El proceso de visualización y elegir gráfica
+·Tipos de Gráficas
+·Storytelling
+·Storytelling – componentes
+·La percepción Visual
+2. Power BI
+Fundamentos de Power BI: Incluye una introducción a Power BI, la interfaz y conceptos básicos, así
+como la carga y transformación básica de datos.
+Creación y personalización de visualizaciones: creación de visualizaciones básicas, el uso de
+jerarquías de datos, escalas de colores, filtros y segmentadores, interacciones...
+Manejo de datos y relaciones: trabajo con bases de datos, la creación de columnas
+personalizadas, relaciones entre tablas...
+Publicación y aplicaciones en Power BI: cómo guardar y trabajar en la web, publicar en Power BI,
+crear aplicaciones en Power BI y utilizar analítica en los dashboards.
+Integración de Elementos de IA y no gráficos en reportes
+Introducción a DAX y manipulación avanzada de datos: medidas, columnas, tablas en DAX,
+agregaciones de datos, combinación de tablas...
+3. Tableau
+Fundamentos de Tableau: introducción a Tableau, la interfaz, conceptos básicos, así como la
+carga y transformación de datos.
+Creación y manipulación de gráficas: gráficas, cálculos entre tablas, el manejo de relaciones entre
+datasets, y el uso de nombres y valores de medidas.
+Visualización avanzada y publicación: mapas y dashboards, y cómo publicar y exportar los
+resultados de Tableau.
+4. CARTO
+·Fundamentos de CARTO y Location Intelligence
+·Creación e interactividad de mapas: uso de la interfaz de creación de mapas, mapa con estilos y
+agregaciones, la implementación de widgets, interactividad y leyendas.
+·Publicación y análisis avanzado: cómo guardar y publicar mapas, y las diferentes opciones de
+análisis, incluyendo la adición de columnas, intersecciones geográficas, radios y zonas de acción.¿CUÁL ES EL FORMATO DEL CURSO?
+• Todo el material estará disponible en el campus virtual desde el inicio del curso. Dispondrás de
+seis meses desde tu matriculación para completar los módulos y los test de autoevaluación. Esto te
+permitirá hacer el curso a tu ritmo de manera totalmente flexible.
+• Cada unidad está formada por diferentes vídeos de gran calidad en los que uno de nuestros
+profesores explicará los conceptos más relevantes de cada tema.
+• También tendrás acceso a todo el contenido académico del curso en formato PDF.
+• Sin exámenes: Al final de cada unidad, tendrás que realizar el test de autoevaluación correspondien-
+te que consta de entre 10-20 preguntas.
+• Además, al matricularte en este curso, tendrás acceso a varias masterclasses online con profesio-
+nales del mundo empresarial a las que podrás acceder en directo o en diferido.(cid:31)(cid:30)(cid:29)(cid:28)(cid:27)(cid:26)(cid:25)(cid:29)(cid:24)(cid:23)(cid:24)(cid:22)(cid:21)(cid:20)(cid:26)(cid:19)(cid:18)(cid:27)(cid:23)(cid:22)(cid:17)(cid:22)(cid:20)(cid:30)(cid:29)(cid:28)(cid:27)(cid:26)(cid:25)(cid:29)(cid:24)(cid:23)(cid:24)(cid:27)(cid:20)(cid:26)(cid:19)(cid:18)(cid:27)(cid:23)(cid:16)(cid:27)(cid:25)(cid:22)(cid:17)(cid:22)(cid:20)(cid:27)(cid:19)(cid:30)(cid:15)(cid:29)(cid:30)(cid:27)(cid:14)(cid:20)(cid:30)(cid:29)(cid:28)(cid:27)(cid:26)(cid:25)(cid:29)(cid:24)(cid:23)(cid:24)(cid:27)(cid:20)(cid:26)(cid:19)(cid:18)(cid:27)(cid:23)(cid:16)(cid:27)(cid:25)(cid:22)(cid:17)(cid:22)(cid:13)(cid:12)(cid:11)(cid:10)(cid:9)(cid:22)(cid:8)(cid:7)(cid:6)(cid:22)(cid:11)(cid:10)(cid:5)(cid:22)(cid:7)(cid:8)(cid:4)

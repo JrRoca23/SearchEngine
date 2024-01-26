@@ -1,42 +1,26 @@
-import pickle as pkl
+from argparse import ArgumentParser
+from dataclasses import dataclass, field
+from typing import Dict, List
 import os
 import json
 import string
 from bs4 import BeautifulSoup
-from argparse import Namespace
-from dataclasses import dataclass, field
 from time import time
-from typing import Dict, List
+from tqdm import tqdm
+import pickle as pkl
 from nltk.corpus import stopwords
 from unidecode import unidecode
+import pdfplumber
 
 @dataclass
 class Document:
-    """Dataclass para representar un documento.
-    Cada documento contendrá:
-        - id: identificador único de documento.
-        - title: título del documento.
-        - url: URL del documento.
-        - text: texto del documento, parseado y limpio.
-    """
-
     id: int
     title: str
     url: str
     text: str
 
-
 @dataclass
 class Index:
-    """Dataclass para representar un índice invertido.
-
-    - "postings": diccionario que mapea palabras a listas de índices. E.g.,
-                  si la palabra w1 aparece en los documentos con índices
-                  d1, d2 y d3, su posting list será [d1, d2, d3].
-
-    - "documents": lista de `Document`.
-    """
-
     postings: Dict[str, List[int]] = field(default_factory=lambda: {})
     documents: List[Document] = field(default_factory=lambda: [])
 
@@ -45,11 +29,8 @@ class Index:
         with open(output_path, "wb") as fw:
             pkl.dump(self, fw)
 
-
 @dataclass
 class Stats:
-    """Dataclass para representar estadísticas del indexador"""
-
     n_words: int = field(default_factory=lambda: 0)
     n_docs: int = field(default_factory=lambda: 0)
     building_time: float = field(default_factory=lambda: 0.0)
@@ -61,66 +42,91 @@ class Stats:
             f"Time: {self.building_time}"
         )
 
-
 class Indexer:
-    """Clase que representa un indexador"""
-
-    def __init__(self, args: Namespace):
+    def __init__(self, args):
         self.args = args
         self.index = Index()
         self.stats = Stats()
+        self.failed_pdfs = []  # Añadir el atributo failed_pdfs
 
     def build_index(self) -> None:
-        """Método para construir un índice.
-        El método debe iterar sobre los ficheros .json creados por el crawler.
-        Para cada fichero, debe crear y añadir un nuevo `Document` a la lista
-        `documents`, al que se le asigna un id entero secuencial, su título
-        (se puede extraer de <title>), su URL y el texto del documento
-        (contenido parseado y limpio). Al mismo tiempo, debe ir actualizando
-        las posting lists. Esto es, dado un documento, tras parsearlo,
-        limpiarlo y tokenizarlo, se añadirá el id del documento a la posting
-        list de cada palabra en dicho documento. Al final, almacenará el objeto
-        Index en disco como un fichero binario.
-
-        [Nota] El indexador no debe distinguir entre mayúsculas y minúsculas, por
-        lo que deberás convertir todo el texto a minúsculas desde el principio.
-        """
-        # Indexing
         ts = time()
-       # Iterar sobre los archivos en la carpeta de entrada
-        for filename in os.listdir(self.args.input_folder):
-            # Verificar si el archivo tiene extensión .json
+
+        for filename in tqdm(os.listdir(self.args.input_folder), desc="Indexing"):
             if filename.endswith(".json"):
-                # Abrir el archivo JSON y cargar los datos
-                with open(os.path.join(self.args.input_folder, filename), "r", encoding="utf-8") as file:
-                    data_list = json.load(file)
-                    
-                    # Iterar sobre los datos en la lista
-                    for data in data_list:
-                        # Generar un nuevo identificador de documento
-                        doc_id = len(self.index.documents) + 1
-                        
-                        # Crear un nuevo objeto Document con los datos del archivo JSON
-                        document = Document(id=doc_id, title=data.get("title", ""), url=data["url"], text=data["text"])
-                        
-                        # Agregar el documento a la lista de documentos en el índice
-                        self.index.documents.append(document)
-
-                        # Limpiar y tokenizar el texto del documento
-                        cleaned_text = self.parse(document.text)
-                        tokens = self.tokenize(cleaned_text)
-
-                        # Actualizar las posting lists en el index
-                        self.update_postings(doc_id, tokens)
+                self.process_json(filename)
+            elif filename.endswith(".pdf"):
+                try:
+                    self.process_pdf(filename)
+                except Exception as e:
+                    print(f"Error al procesar PDF {filename}: {type(e).__name__} - {str(e)}")
 
         te = time()
 
-        # Save index
         output_folder = "etc/indexes"
+        os.makedirs(output_folder, exist_ok=True)
         self.index.save(output_folder, self.args.output_name)
 
-        # Show stats
         self.show_stats(building_time=te - ts)
+
+    def process_pdf(self, filename: str) -> None:
+        """Método para procesar archivos PDF."""
+        pdf_path = os.path.join(self.args.input_folder, filename)
+
+        try:
+            # Utilizar pdfplumber para extraer texto de PDF
+            with pdfplumber.open(pdf_path) as pdf_document:
+                text = ""
+                for page in pdf_document.pages:
+                    text += page.extract_text()
+
+                # Utilizar PyMuPDF para extraer el título del PDF
+                metadata = pdf_document.metadata
+                title = metadata.get("title", "")
+
+                # Incrementar el identificador único para cada documento
+                doc_id = len(self.index.documents) + 1
+
+                # Crear un nuevo objeto Document con los datos del archivo PDF
+                document = Document(id=doc_id, title=title, url="", text=text)
+
+                # Agregar el documento a la lista de documentos en el índice
+                self.index.documents.append(document)
+
+                # Limpiar y tokenizar el texto del documento
+                cleaned_text = self.parse(document.text)
+                tokens = self.tokenize(cleaned_text)
+
+                # Actualizar las posting lists en el index
+                self.update_postings(doc_id, tokens)
+
+        except Exception as e:
+            print(f"Error al procesar PDF {filename}: {type(e).__name__} - {str(e)}")
+            self.failed_pdfs.append(filename)  # Agregar a la lista de archivos PDF que fallan
+            pass  # Ignorar el error y continuar con el siguiente archivo
+
+    def process_json(self, filename: str) -> None:
+        """Método para procesar archivos JSON."""
+        with open(os.path.join(self.args.input_folder, filename), "r", encoding="utf-8") as file:
+            data_list = json.load(file)
+
+            # Iterar sobre los datos en la lista
+            for data in data_list:
+                # Generar un nuevo identificador de documento
+                doc_id = len(self.index.documents) + 1
+
+                # Crear un nuevo objeto Document con los datos del archivo JSON
+                document = Document(id=doc_id, title=data.get("title", ""), url=data["url"], text=data["text"])
+
+                # Agregar el documento a la lista de documentos en el índice
+                self.index.documents.append(document)
+
+                # Limpiar y tokenizar el texto del documento
+                cleaned_text = self.parse(document.text)
+                tokens = self.tokenize(cleaned_text)
+
+                # Actualizar las posting lists en el index
+                self.update_postings(doc_id, tokens)
     
     def update_postings(self, doc_id: int, text: str) -> None:
         """Método para actualizar las posting lists."""

@@ -216,13 +216,15 @@ class Retriever:
     def _generate_snippet(self, content: str) -> str:
         """Genera un snippet a partir del contenido del documento."""
         soup = BeautifulSoup(content, 'html.parser')
-        paragraphs = soup.find_all(['h1','h2', 'h3', 'h4', 'h5', 'h6'])
+        paragraphs = soup.find_all(['h1', 'h2', 'h3', 'h4', 'h5', 'h6'])
 
         if paragraphs:
             # Tomar el texto de los primeros tres párrafos
             snippet_text = ' '.join([p.get_text() for p in paragraphs[:3]])
+            # Eliminar espacios en blanco adicionales
+            snippet_text = ' '.join(snippet_text.split())
             # Limitar la longitud del snippet a 150 caracteres
-            return snippet_text[:150]
+            return snippet_text[:150]     
         else:
-            # Si no hay párrafos, simplemente tomar los primeros 150 caracteres
-            return content[:150]
+            # Si no hay párrafos, simplemente tomar los primeros 150 caracteres y eliminar espacios en blanco adicionales
+            return ' '.join(content[:150].split())

@@ -1,0 +1,270 @@
+1. DATOS BÁSICOS
+Asignatura
+Tipografía
+Titulación
+Grado en Diseño
+Escuela/ Facultad
+Escuela de Arquitectura, Ingeniería y Diseño
+Curso
+Segundo
+ECTS
+6 ECTS
+Carácter Optativa
+Idioma/s
+Castellano
+Modalidad
+Presencial
+Semestre
+Semestre 2
+Curso académico
+2023-24
+Docente coordinador
+Miguel Trigo Morán
+2. PRESENTACIÓN
+Introducción a la tipografía, definición, función, forma, elaboración, diseño, estructura y creación.
+Proyecto editorial. Evolución histórica y técnica de la tipografía. Fundamentos de la tipografía. Tipografía
+e identidad gráfica. Tipografía y diseño de la información.
+En este módulo optativo el estudiante aprenderá las herramientas creativas, metodológicas y tecnológicas
+propias del diseño gráfico, tanto en su vertiente analógica como digital.
+3. COMPETENCIAS Y RESULTADOS DE APRENDIZAJE
+Competencias básicas:
+• CB1: Que los estudiantes hayan demostrado poseer y comprender conocimientos en un área de
+estudio que parte de la base de la educación secundaria general, y se suele encontrar a un nivel que,
+si bien se apoya en libros de texto avanzados, incluye también algunos aspectos que implican
+conocimientos procedentes de la vanguardia de su campo de estudio.
+• CB2: Que los estudiantes sepan aplicar sus conocimientos a su trabajo o vocación de una forma
+profesional y posean las competencias que suelen demostrarse por medio de la elaboración y defensa
+de argumentos y la resolución de problemas dentro de su área de estudio.
+• CB3: Que los estudiantes tengan la capacidad de reunir e interpretar datos relevantes (normalmente
+dentro de su área de estudio) para emitir juicios que incluyan una reflexión sobre temas relevantes de
+índole social, científica o ética.
+• CB4: Que los estudiantes puedan transmitir información, ideas, problemas y soluciones a un público
+tanto especializado como no especializado.
+• CB5: Que los estudiantes hayan desarrollado aquellas habilidades de aprendizaje necesarias para
+emprender estudios posteriores con un alto grado de autonomía.
+1Competencias transversales:
+• CT1: Aprendizaje Autónomo: Habilidad para elegir las estrategias, las herramientas y los momentos
+que considere más efectivos para aprender y poner en práctica de manera independiente lo que ha
+aprendido.
+• CT2: Autoconfianza: Capacidad para valorar nuestros propios resultados, rendimiento y capacidades
+con la convicción interna de que somos capaces de hacer las cosas y los retos que se nos plantean.
+• CT5: Capacidad para aplicar los conocimientos a la práctica, para utilizar los conocimientos adquiridos
+en el ámbito académico en situaciones lo más parecidas posibles a la realidad de la profesión para la
+cual se están formando.
+• CT12: Razonamiento crítico: Capacidad para analizar una idea, fenómeno o situación desde diferentes
+perspectivas y asumir ante él/ella un enfoque propio y personal, construido desde el rigor y la
+objetividad argumentada, y no desde la intuición.
+• CT14: Innovación-Creatividad: Capacidad para proponer y elaborar soluciones nuevas y originales que
+añaden valor a problemas planteados, incluso de ámbitos diferentes al propio del problema.
+• CT16: Toma de decisiones: Capacidad para realizar una elección entre las alternativas o formas
+existentes para resolver eficazmente diferentes situaciones o problemas.
+• CT18: Utilización de las tecnologías de la información y las comunicaciones (TIC): Capacidad para
+utilizar eficazmente las tecnologías de la información y las comunicaciones como herramienta para la
+búsqueda, procesamiento y almacenamiento de la información, así como para el desarrollo de
+habilidades comunicativas.
+Competencias específicas:
+• CE23: Conocimiento de la técnica de la tipografía y sus aplicaciones en el diseño gráfico.
+• CE24: Conocimiento del concepto del branding y la idea de la imagen corporativa.
+• CE25: Conocimiento de la tecnología del diseño gráfico aplicada en medios on-line y off-line.
+• CE26: Capacidad para aplicar la tecnología del diseño gráfico en proyectos de diseño on-line y off-line.
+Resultados de aprendizaje:
+• RA1. El estudiante aprenderá a: Resolver problemas de comunicación, que incluyen la identificación
+del problema, investigación, recopilación de información, análisis, generación de soluciones
+alternativas, prototipado y test de usuarios y evaluación de resultados
+• RA2. Describir y responder a audiencias y contextos para los que se definen soluciones de
+comunicación, incluyendo los factores humanos físicos, cognitivos, culturales y sociales que configuran
+las soluciones de diseño.
+• RA3. Crear y desarrollar formas visuales en respuesta a problemas de comunicación, incluyendo la
+compresión de los principios de composición y organización visual, jerarquía de la información,
+representación visual, tipografía, estética, y la construcción de imágenes dotadas de significado.
+• RA4. Comprender las herramientas y la tecnología, así como el rol que cumplen en la creación,
+reproducción y distribución de mensajes visuales. Se trata, entre otras, del dibujo, técnicas de
+impresión, fotografía, y medios interactivos basados en el tiempo (cine, vídeo y multimedia).
+En la tabla inferior se muestra la relación entre las competencias que se desarrollan en la asignatura y los
+resultados de aprendizaje que se persiguen:
+Competencias Resultados de aprendizaje
+CB1, CB2, CB3, CB4, CB5 RA1, RA2
+2CT1, CT2, CT5, CT12, CT14, RA1, RA2, RA3
+CT16, CT18
+CE23, CE24, CE25, CE26 RA3, RA4
+4. CONTENIDOS
+Módulo de carga teórica
+Parte 1. Introducción
+1.1. La evolución de la escritura a través de la historia
+1.2. Tipografía, Caligrafía y Lettering
+1.3. Johannes Gutenberg, la invención de la imprenta y de los tipos móviles
+1.4. Impulsores de la tipografía en Europa
+Parte 2. Evolución de las fuentes.
+2.1. La imprenta y la máquina de escribir.
+2.2. Fuentes monoespaciadas.
+2.3. Tipografía Modular.
+2.4. Tipografías y el píxel.
+2.5. El mundo digital. La tipografía PostScript, TrueType y Opentype.
+2.6. La tipografía en la web.
+Módulo de carga práctica
+Unidad A. Estructura y partes de la letra
+A.1. Las serifas y el palo seco. Características y aplicaciones prácticas.
+A.2. Otras partes de la letra.
+A.3. Caja alta y caja baja.
+A.4 Ojo, contraste y eje.
+Unidad B. La tipografía comunica.
+B.1. Aplicaciones al branding.
+Unidad C. Maquetación.
+C.1. Concepto del Golden Triangle (Triángulo dorado).
+C.2. Tipos de página, márgenes, disposición y maquetación de los elementos .
+C.3. Alineaciones de párrafos. Diferencias culturales, buenas y malas prácticas.
+C.4. Justificación y solución a problemas.
+C.5. Tipos de espaciados.
+C.6. División de frases y palabras.
+C.7. Aislamientos y ajustes visuales.
+Unidad D. Qué no hacer.
+D.1. Copia de tipografías y derechos de uso.
+D2. Caracteres caprichosos.
+D.3. Estilos problemáticos y errores comunes.
+D.4. Elección de buenas fuentes.
+Unidad E. Ajustes
+E.1. Ajustes en títulos
+E.2. Uso de la minúscula y la mayúscula.
+3E.3. Espacios.
+E.4. Orientaciones.
+E.5. El espacio negativo.
+Unidad F. Presentación de una tipografía.
+F.1. Aspectos a tener en cuenta en la presentación de las tipografías.
+F.2. Tipos, familias, tamaños y variantes.
+F.3. Pangramas.
+F.4. Helvética VS Arial.
+Unidad G. Tipografías con reputación.
+G.1. Reconocer una tipografía “buena” de una “mala”.
+G.2. Aplicaciones de la tipografía según el formato/soporte.
+G.3. Historia de las tipografías más conocidas y aplicaciones en la realidad.
+G.4. Revisiones de las tipografías a través de la historia.
+G.5. Didonas.
+Parte H. Tipografías y espacio (Parte I)
+H.1. Stefan Sagmeister.
+H3.2. Agencias de tipografía.
+H.3. Aplicación de la tipografía a un espacio de pequeño formato no convencional.
+Parte I. Tipografías y espacio (Parte II)
+I.1. Tipografía y señalética.
+I.2. Orientar, Señalar y Señalizar.
+I.3. Buenas prácticas. Claridad y continuidad.
+I.4. Aplicación de la tipografía en un entorno.
+Unidad J. La química y el impacto ambiental de la tipografía.
+J.1. La química de los materiales de impresión.
+J.2. Tipos de tintas y principales usos.
+J.3. Consumo.
+5. METODOLOGÍAS DE ENSEÑANZA-APRENDIZAJE
+A continuación, se indican los tipos de metodologías de enseñanza-aprendizaje que se aplicarán:
+• Clase Magistral
+• Aprendizaje Cooperativo.
+• Aprendizaje Basado en Problemas (ABP).
+• Aprendizaje Basado en Proyectos (PBS).
+• Aprendizaje basado en enseñanzas de taller.
+6. ACTIVIDADES FORMATIVAS
+A continuación, se identifican los tipos de actividades formativas que se realizarán y la dedicación en horas
+del estudiante a cada una de ellas:
+Modalidad presencial:
+4Actividad formativa Número de horas
+Asistencia y participación activa en las actividades 6,25h (presenciales)
+Trabajos dirigidos, ejercicios prácticos y resolución de problemas 25h (20% presenciales)
+Exposición de trabajos 12,5h (presenciales)
+Trabajo en grupo de carácter integrador 12,5h (40% presenciales)
+Investigaciones y proyectos 62,5h (40% presenciales)
+Trabajo autónomo 12,5h (no presenciales)
+Tutoría, seguimiento académico y evaluación 18,75h (presenciales)
+TOTAL 150h
+7. EVALUACIÓN
+A continuación, se relacionan los sistemas de evaluación, así como su peso sobre la calificación total de la
+asignatura:
+Modalidad presencial:
+Sistema de evaluación Peso
+Entrega y/o presentación de trabajos 90%
+Examen 10%
+En el Campus Virtual, cuando accedas a la asignatura, podrás consultar en detalle las actividades de
+evaluación que debes realizar, así como las fechas de entrega y los procedimientos de evaluación de cada
+una de ellas.
+7.1. Convocatoria ordinaria
+Para superar la asignatura en convocatoria ordinaria deberás obtener una calificación mayor o igual que
+5,0 sobre 10,0 en la calificación final (media ponderada) de la asignatura.
+En todo caso, será necesario que obtengas una calificación mayor o igual que 4,0 en la prueba final, para
+que la misma pueda hacer media con el resto de actividades.
+7.2. Convocatoria extraordinaria
+Para superar la asignatura en convocatoria ordinaria deberás obtener una calificación mayor o igual que
+5,0 sobre 10,0 en la calificación final (media ponderada) de la asignatura.
+En todo caso, será necesario que obtengas una calificación mayor o igual que 4,0 en la prueba final, para
+que la misma pueda hacer media con el resto de actividades.
+5Se deben entregar las actividades no superadas en convocatoria ordinaria, tras haber recibido las
+correcciones correspondientes a las mismas por parte del docente, o bien aquellas que no fueron
+entregadas.
+8. CRONOGRAMA
+En este apartado se indica el cronograma con fechas de entrega de actividades evaluables de la
+asignatura:
+Actividades evaluables Fecha
+Semana 1 - 2
+Actividad 1: Composición tipográfica
+Semana 2 - 3
+Actividad 2: Tendencias
+Semana 5 – 6
+Actividad 3: Retículas de maquetación
+Actividad 4: Vende una tipografía Semana 7 – 8
+Semana 8 – 9
+Actividad 5: Calendario
+Actividad 6: Ejercicio de texto Semana 9 – 10
+Actividad 7: Control del espacio. Tipografía sobre el cuerpo
+Semana 10 – 12
+humano.
+Semana 13 – 14
+Actividad 8: Tipografía y mensaje.
+Semana 5 – 19
+Actividad 9: Tipografía en señalética
+A realizar en la última semana
+del cuatrimestre (recopilación de
+Actividad 10: Portfolio de la asignatura. Coherencia expositiva
+trabajos)
+Este cronograma podrá sufrir modificaciones por razones logísticas de las actividades. Cualquier
+modificación será notificada al estudiante en tiempo y forma.
+9. BIBLIOGRAFÍA
+A continuación, se indica bibliografía recomendada:
+• Arnheim, R., & Balseiro, M. L. (2008). Arte y percepción visual: psicología del ojo creador: nueva
+versión (2a. ed., 4a. reimp.). Alianza.
+• Beier, S. (2012). Reading letters: Designing for legibility. BIS Publishers B.V. de Jong, C. W., Purvis, A.
+W., & Tholenaar, J. (2017). Type. A visual history of typefaces & graphic styles (C. W. de Jong, A. W.
+Purvis, & J. Tholenaar, Eds.). Taschen.
+• Fowkes, A. (2017). Expressive type: Unique typographic design in sketchbooks, in print, and on
+location around the globe. Rockport.
+• Garfield. S. (2011). Es mi tipo: Un libro sobre fuentes tipográficas. Taurus.
+• Haslam, A., & Baines, P. (2003). Tipografía. Función, forma y diseño. Editorial Gustavo Gili.
+• Jardí. E. (2021). Cincuenta y tantos consejos sobre tipografía. Editorial Gustavo Gili.
+• Kane, J. (2005). Manual de tipografía. Editorial Gustavo Gili.
+6• Langwe. M, Castán, G. (2019). Encuadernar, plegar y coser: Cómo hacer libros y otros proyectos con
+papel. Editorial Gustavo Gili S.L.
+• Muller, L., & Malsy, V. (Eds.). (2007). Helvetica forever: Story of a typeface. Lars Muller.
+• Martin. E. (1975). Artes Gráficas. Introducción general. Ed. Edebé.
+• Samara, T. (2004). Diseñar Con y Sin Retícula. Editorial Gustavo Gili.
+• Estudio de nuevas alternativas de packaging sostenible para envases take away. (2021).
+10. UNIDAD DE ORIENTACIÓN EDUCATIVA Y DIVERSIDAD
+Desde la Unidad de Orientación Educativa y Diversidad (ODI) ofrecemos acompañamiento a nuestros
+estudiantes a lo largo de su vida universitaria para ayudarles a alcanzar sus logros académicos. Otros de
+los pilares de nuestra actuación son la inclusión del estudiante con necesidades específicas de apoyo
+educativo, la accesibilidad universal en los distintos campus de la universidad y la equiparación de
+oportunidades.
+Desde esta Unidad se ofrece a los estudiantes:
+1. Acompañamiento y seguimiento mediante la realización de asesorías y planes personalizados a
+estudiantes que necesitan mejorar su rendimiento académico.
+2. En materia de atención a la diversidad, se realizan ajustes curriculares no significativos, es decir,
+a nivel de metodología y evaluación, en aquellos alumnos con necesidades específicas de apoyo
+educativo persiguiendo con ello una equidad de oportunidades para todos los estudiantes.
+3. Ofrecemos a los estudiantes diferentes recursos formativos extracurriculares para desarrollar
+diversas competencias que les enriquecerán en su desarrollo personal y profesional.
+4. Orientación vocacional mediante la dotación de herramientas y asesorías a estudiantes con
+dudas vocacionales o que creen que se han equivocado en la elección de la titulación.
+Los estudiantes que necesiten apoyo educativo pueden escribirnos a:
+orientacioneducativa@universidadeuropea.es
+11. ENCUESTAS DE SATISFACCIÓN
+¡Tú opinión importa!
+La Universidad Europea te anima a participar en las encuestas de satisfacción para detectar puntos fuertes
+y áreas de mejora sobre el profesorado, la titulación y el proceso de enseñanza-aprendizaje.
+Las encuestas estarán disponibles en el espacio de encuestas de tu campus virtual o a través de tu correo
+electrónico.
+Tu valoración es necesaria para mejorar la calidad de la titulación.
+Muchas gracias por tu participación.
+7
