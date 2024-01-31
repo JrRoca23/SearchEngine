@@ -22,7 +22,7 @@ def parse_args():
         "-m",
         "--max_webs",
         type=int,
-        default=30,
+        default=300,
         help="Número máximo de webs a crawlear.",
     )
 

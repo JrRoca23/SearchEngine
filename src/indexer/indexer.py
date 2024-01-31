@@ -140,80 +140,37 @@ class Indexer:
                 self.index.postings[word].append(doc_id)
 
     def parse(self, text: str) -> str:
-        """Método para extraer el texto de un documento.
-        Puedes utilizar la librería 'beautifulsoup' para extraer solo
-        el texto del bloque principal de una página web (lee el pdf de la
-        actividad para más detalles)
-
-        Args:
-            text (str): texto de un documento
-        Returns:
-            str: texto parseado
-        """
+        """Método para extraer el texto de un documento"""
         # Utilizar BeautifulSoup para extraer solo el texto del bloque principal
         soup = BeautifulSoup(text, "html.parser")
         main_text = soup.get_text(separator=" ", strip=True)
         return main_text
 
     def tokenize(self, text: str) -> List[str]:
-        """Método para tokenizar un texto. Esto es, convertir
-        un texto a una lista de palabras. Puedes utilizar tokenizers
-        existentes en NLTK, Spacy, etc. O simplemente separar por
-        espacios en blanco.
-
-        Args:
-            text (str): text de un documento
-        Returns:
-            List[str]: lista de palabras del documento
-        """
-        # En este ejemplo, simplemente dividimos el texto por espacios
+        """Método para tokenizar un texto"""
+        # Dividimos el texto por espacios
         return text.split()
 
     def remove_stopwords(self, words: List[str]) -> List[str]:
-        """Método para eliminar stopwords después del tokenizado.
-        Puedes usar cualquier lista de stopwords, e.g., de NLTK.
-
-        Args:
-            words (List[str]): lista de palabras de un documento
-        Returns:
-            List[str]: lista de palabras del documento, sin stopwords
-        """
-        # En este ejemplo, simplemente excluimos algunas palabras comunes en español
-        stop_words = set(stopwords.words("english"))
+        """Método para eliminar stopwords después del tokenizado"""
+        # Elimina las stopwords de una lista de palabras
+        stop_words = set(stopwords.words("spanish"))
         return [word for word in words if unidecode(word.lower()) not in stop_words]
 
     def remove_punctuation(self, text: str) -> str:
         """Método para eliminar signos de puntuación de un texto:
-         < > ¿ ? , ; : . ( ) [ ] " ' ¡ !
-
-        Args:
-            text (str): texto de un documento
-        Returns:
-            str: texto del documento sin signos de puntuación.
-        """
+         < > ¿ ? , ; : . ( ) [ ] " ' ¡ ! """
         translation_table = str.maketrans("", "", string.punctuation)
         return text.translate(translation_table)
 
     def remove_elongated_spaces(self, text: str) -> str:
         """Método para eliminar espacios duplicados.
-        E.g., "La     Universidad    Europea" --> "La Universidad Europea"
-
-        Args:
-            text (str): texto de un documento
-        Returns:
-            str: texto sin espacios duplicados
-        """
+        E.g., "La     Universidad    Europea" --> "La Universidad Europea" """
         return " ".join(text.split())
 
     def remove_split_symbols(self, text: str) -> str:
         """Método para eliminar símbolos separadores como
-        saltos de línea, retornos de carro y tabuladores.
-
-        Args:
-            text (str): texto de un documento
-        Returns:
-            str: texto sin símbolos separadores
-        """
+        saltos de línea, retornos de carro y tabuladores"""
         return text.replace("\n", " ").replace("\t", " ").replace("\r", " ")
     
     def show_stats(self, building_time: float) -> None:

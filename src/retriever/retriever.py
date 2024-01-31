@@ -68,7 +68,6 @@ class Retriever:
 
         return output
 
-
     def search_from_file(self, fname: str) -> Dict[str, List[Result]]:
         """Método para hacer consultas desde fichero."""
         with open(fname, "r") as fr:
@@ -101,6 +100,7 @@ class Retriever:
         print(f"\nNOT: ~{operand_a} = {result}")
         return result
 
+    # Método para la evaluación de la consulta 
     def _evaluate_query(self, query_terms):
         result_stack = []  # Pila para almacenar resultados intermedios
         operator_stack = []  # Pila para almacenar operadores
@@ -205,12 +205,11 @@ class Retriever:
             print("ERROR: Operadores sin operandos suficientes.")
             return []
 
-
     def _get_result_info(self, doc_id: int) -> Result:
         """Obtiene la información real de un documento."""
-        document = self.index.documents[doc_id - 1]  # Restar 1 para obtener el índice correcto
+        document = self.index.documents[doc_id - 1]
         url = document.url
-        snippet = self._generate_snippet(document.text)  # Usar el atributo 'text' en lugar de 'content'
+        snippet = self._generate_snippet(document.text)  
         return Result(url=url, snippet=snippet)
 
     def _generate_snippet(self, content: str) -> str:

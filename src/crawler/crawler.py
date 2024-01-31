@@ -93,13 +93,13 @@ class Crawler:
                     if chunk:
                         pdf_file.write(chunk)
 
-            # Extract text from the PDF file
+            # Extraer texto del archivo pdf
             with pdfplumber.open(pdf_filename) as pdf:
                 text = ""
                 for page in pdf.pages:
                     text += page.extract_text()
 
-            # Save the extracted text to a text file
+            # Guardar el texto extraido como archivo txt
             text_filename = os.path.splitext(pdf_filename)[0] + ".txt"
             with open(text_filename, 'w', encoding='utf-8') as text_file:
                 text_file.write(text)
